@@ -19,6 +19,12 @@ database.once('open',()=>{console.log('Connected to Database!')});
 app.use(express.json());
 app.use(express.urlencoded());
 
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({ extended: true }));
+
 // router
 const programRouter = require('./routes/route.program');
 app.use('/programs',programRouter);
+
+const blueprintRouter = require('./routes/route.blueprint');
+app.use('/blueprints',blueprintRouter);
