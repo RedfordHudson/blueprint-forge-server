@@ -29,4 +29,16 @@ express.patch('/update/:id', async (req,res) => {
         })
 })
 
+express.post('/add', async (req,res) => {
+    const blueprint = new blueprintSchema({
+        name:req.body.name,
+        level:req.body.level,
+        nodes:req.body.nodes
+    });
+
+    blueprint.save()
+        .then(() => res.json('Blueprint Saved!'))
+        .catch(err => res.status(500).json('ERROR: '+err))
+})
+
 module.exports = express;
