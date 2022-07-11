@@ -32,7 +32,7 @@ express.patch('/update/:id', async (req,res) => {
 express.post('/add', async (req,res) => {
     const blueprint = new blueprintSchema({
         name:req.body.name,
-        level:req.body.level,
+        complete:req.body.complete,
         series:req.body.series
     });
 
