@@ -15,7 +15,7 @@ mongoose.connect(process.env.MONGODB_URI || MONGODB_URI);
 const database = mongoose.connection;
 database.once('open',()=>{console.log('Connected to Database!')});
 
-// middleware 
+// middleware
 app.use(express.json());
 app.use(express.urlencoded());
 
