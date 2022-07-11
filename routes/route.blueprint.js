@@ -20,7 +20,6 @@ express.patch('/update/:id', async (req,res) => {
     blueprintSchema.findById(req.params.id)
         .then(blueprint => {
             blueprint.name = req.body.name;
-            blueprint.level = req.body.level;
             blueprint.nodes = req.body.nodes;
 
             blueprint.save()
